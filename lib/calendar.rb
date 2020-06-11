@@ -8,9 +8,10 @@ def display_calendar
 	first_wday = first_day.wday
 	
 
-  days = (1..last_day.day).map{|n| n.to_s.rjust(2)}
+	days = (1..last_day.day).map{|n| n.to_s.rjust(2)}
 
-	days = Array.new(first_wday, ' ').push(days).flatten.each_slice(7).to_a
+	#.to_aを削除
+	days = Array.new(first_wday, ' ').push(days).flatten.each_slice(7)
 
 	puts today.strftime("%B %Y").center(21)
 	puts "Su Mo Tu We Th Fr St"
